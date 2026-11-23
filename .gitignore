@@ -11,8 +11,9 @@ env/
 Thumbs.db
 output/
 test_*/
-attributes_cache.jsonl
 *.gpkg
 *.geojson
 *.csv
-metadata.json
+_cache_fgislk_*/
+*_log.txt
+*.partial.gpkg

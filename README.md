@@ -14,7 +14,7 @@
 ## Установка
 
 ```bash
-python -m pip install requests geopandas pyogrio shapely
+python -m pip install -r requirements.txt
 ```
 
 ## Запуск
@@ -25,22 +25,49 @@ python -m pip install requests geopandas pyogrio shapely
 python fgislk_export.py
 ```
 
-Командная строка:
+Скрипт открывает окно выбора папки загрузки (последняя выбранная папка запоминается в `~/.fgislk_export.json`), затем спрашивает регион и лесничества. Если в папке есть незавершённая загрузка, скрипт предлагает её продолжить.
+
+Командная строка (папка задаётся параметром `--out`):
 
 ```bash
 python fgislk_export.py --list-regions
 python fgislk_export.py --list-forestries 26
-python fgislk_export.py --region 26 --forestry 26:4 --out essentuki
-python fgislk_export.py --region 26 --forestry 26:4,26:7 --out kmv
-python fgislk_export.py --region 26 --all-forestries --out stavropol
+python fgislk_export.py --region 26 --forestry 26:4 --out D:\FGISLK\essentuki
+python fgislk_export.py --region 26 --forestry 26:4,26:7 --out D:\FGISLK\kmv
+python fgislk_export.py --region 26 --all-forestries --out D:\FGISLK\stavropol
 ```
 
 Короткий тест:
 
 ```bash
-python fgislk_export.py --region 21 --forestry 21:1 \
-  --max-quarters 1 --max-pieces 30 --out test
+python fgislk_export.py --region 21 --forestry 21:1 --max-quarters 1 --max-pieces 30 --out test --no-pause
 ```
+
+Параметры:
+
+| Параметр | Назначение |
+|---|---|
+| `--out` | папка загрузки; без него в интерактивном режиме открывается окно выбора |
+| `--geojson`, `--csv` | дополнительно записать каждый слой в GeoJSON или CSV (по умолчанию создаётся только GPKG) |
+| `--keep-cache` | не удалять промежуточные данные после успешной записи GPKG |
+| `--restart` | начать загрузку заново, удалив сохранённые промежуточные данные |
+| `--no-pause` | не ждать Enter перед закрытием окна |
+| `--page-size`, `--timeout`, `--workers` | размер страницы WFS, тайм-аут запроса, число потоков для атрибутов |
+| `--no-attributes`, `--no-protection` | не загружать подробные атрибуты выделов или защитные слои |
+| `--max-quarters`, `--max-pieces` | ограничения для пробного запуска |
+
+## Продолжение после обрыва
+
+Всё скачанное сразу сохраняется в папке `<папка загрузки>/_cache_fgislk_<регион>_<лесничества>/`:
+
+- `run.json` — регион, выбранные лесничества, параметры и состояние загрузки;
+- каталоги `catalog`, `central`, `district`, `protection`, `quarters`, `pieces` — завершённые единицы (лесничество, квартал, защитный слой);
+- `*.part.jsonl` — постраничные контрольные точки для единицы, загрузка которой была прервана;
+- `attributes.jsonl` — подробные атрибуты выделов.
+
+При потере связи скрипт не завершается, а повторяет тот же запрос с паузой от 5 до 120 секунд и продолжает работу после восстановления связи. Если окно закрыто, компьютер выключен или нажато Ctrl+C, достаточно запустить скрипт повторно с той же папкой и теми же лесничествами: уже скачанные кварталы и атрибуты берутся из сохранённого, прерванный квартал продолжается с последней полученной страницы.
+
+После успешной записи GPKG промежуточные данные удаляются (кроме пробных запусков с `--max-quarters` или `--max-pieces` и запуска с `--keep-cache`).
 
 ## Защитные слои
 
@@ -53,7 +80,7 @@ python fgislk_export.py --region 21 --forestry 21:1 \
 - `OZUL_MANAGEMENT` — особо защитные участки по лесоустройству;
 - `PROTECTIVE_FOREST_SUBCATEGORY_MANAGEMENT` — подкатегории защитных лесов по лесоустройству.
 
-Каждый исходный слой сохраняется в GeoPackage, GeoJSON и CSV. Если в выбранной территории слой пуст, он остаётся пустым — категория не подставляется предположительно.
+Каждый непустой исходный слой сохраняется в GeoPackage. Пустые слои в GPKG не записываются, их число объектов указывается в таблице `metadata`; категория не подставляется предположительно.
 
 ## Поля выделов
 
@@ -100,6 +127,9 @@ python fgislk_export.py --region 21 --forestry 21:1 --min-overlap-m2 10
 
 ## Результаты
 
-Основной результат — `fgislk_<код региона>.gpkg`. В нём находятся четыре административно-лесоустроительных слоя, шесть защитных слоёв и `piece_protection_links`.
+В папке загрузки создаются:
 
-Также каждый слой записывается отдельно в GeoJSON и CSV. `attributes_cache.jsonl` позволяет продолжить прерванную загрузку подробных атрибутов выделов.
+- `fgislk_<регион>_<лесничества>.gpkg` — основной результат, например `fgislk_21_1-2.gpkg` для лесничеств 21:1 и 21:2, `fgislk_21_all.gpkg` для всех лесничеств региона, `fgislk_21_7lesn_<хеш>.gpkg` при выборе более четырёх лесничеств; при пробном запуске к имени добавляется `_test`;
+- `fgislk_<регион>_<лесничества>_log.txt` — журнал выполнения.
+
+В GPKG находятся четыре административно-лесоустроительных слоя (`central_forestries`, `district_forestries`, `quarters`, `taxation_pieces`), непустые защитные слои, `piece_protection_links` и таблица `metadata` (источник, версия, выбранные лесничества, число объектов по слоям, параметры). Все геометрии записываются как MultiPolygon в `EPSG:4326`. GPKG сначала пишется во временный файл `*.partial.gpkg`; если итоговый файл открыт в ГИС, результат сохраняется под именем с датой и временем.
