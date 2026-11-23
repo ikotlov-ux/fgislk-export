@@ -3,9 +3,10 @@
 
 Интерактивно выбирает папку загрузки, регион и центральные лесничества, затем
 выгружает центральные и участковые лесничества, кварталы, выделы, подробные
-атрибуты выделов и шесть слоёв категорий защитности/ОЗУ. Защитные сведения
-добавляются к выделам пространственным пересечением. Дополнительно создаётся
-таблица всех пересечений с площадью и долей выдела.
+атрибуты выделов и шесть слоёв категорий защитности/ОЗУ. Для выбранных
+лесничеств сохраняет точные границы, индивидуальные bbox и общий bbox в EPSG:4326.
+Защитные сведения добавляются к выделам пространственным пересечением.
+Дополнительно создаётся таблица всех пересечений с площадью и долей выдела.
 
 Папка загрузки: --out или окно выбора папки (запуск без параметров).
 Докачка: каждая страница ответа сразу сохраняется в
@@ -25,6 +26,7 @@ GeoJSON и CSV по слоям — только по флагам --geojson / --
     python fgislk_export.py --list-forestries 26
     python fgislk_export.py --region 26 --forestry 26:4 --out D:\\FGISLK\\essentuki
     python fgislk_export.py --out D:\\FGISLK\\essentuki      (продолжить незавершённую)
+    %run fgislk_export.py                                   (Jupyter)
 """
 from __future__ import annotations
 
@@ -332,7 +334,43 @@ def padded(b:tuple[float,float,float,float],pad:float=.00002)->tuple[float,float
 
 def union_bbox(features:Iterable[dict[str,Any]])->tuple[float,float,float,float]:
     boxes=[feature_bbox(f) for f in features]
+    if not boxes:
+        raise ValueError("Нельзя вычислить bbox: список геометрий пуст")
     return min(b[0] for b in boxes),min(b[1] for b in boxes),max(b[2] for b in boxes),max(b[3] for b in boxes)
+
+
+def bbox_feature(bbox:tuple[float,float,float,float], properties:dict[str,Any], fid:str)->dict[str,Any]:
+    """Создаёт GeoJSON-полигон bbox в порядке west,south,east,north."""
+    minx,miny,maxx,maxy=bbox
+    ring=[[minx,miny],[maxx,miny],[maxx,maxy],[minx,maxy],[minx,miny]]
+    props=dict(properties)
+    props.update({"min_lon":minx,"min_lat":miny,"max_lon":maxx,"max_lat":maxy,
+                  "bbox_wsen":f"{minx:.8f},{miny:.8f},{maxx:.8f},{maxy:.8f}",
+                  "bbox_crs":"EPSG:4326"})
+    return {"type":"Feature","id":fid,"properties":props,
+            "geometry":{"type":"Polygon","coordinates":[ring]},"bbox":[minx,miny,maxx,maxy]}
+
+
+def make_forestry_bboxes(boundaries:list[dict[str,Any]])->tuple[list[dict[str,Any]],list[dict[str,Any]]]:
+    """Возвращает bbox каждого лесничества и общий bbox выбранной территории."""
+    grouped:dict[str,list[dict[str,Any]]]={}
+    for f in boundaries:
+        grouped.setdefault(ext(f),[]).append(f)
+    individual=[]
+    for forestry_id,features in sorted(grouped.items(),key=lambda x:natural_key(x[0])):
+        b=union_bbox(features)
+        title=next((label(f) for f in features if label(f)),"")
+        individual.append(bbox_feature(
+            b,{"forestry_id":forestry_id,"forestry_name":title,"bbox_scope":"individual"},
+            f"bbox.{forestry_id}"))
+    combined=[]
+    if boundaries:
+        b=union_bbox(boundaries)
+        combined=[bbox_feature(
+            b,{"forestry_ids":"; ".join(sorted(grouped,key=natural_key)),
+               "forestry_count":len(grouped),"bbox_scope":"combined"},
+            "bbox.selected_area")]
+    return individual,combined
 
 
 def fetch_region_central(s:requests.Session, region:str, timeout:int)->list[dict[str,Any]]:
@@ -784,10 +822,33 @@ class Tee:
         return getattr(self.stream, name)
 
 
+_LOG: dict[str, Any] = {}
+
+
 def start_log(path: Path) -> None:
+    stop_log()
     fh = path.open("a", encoding="utf-8")
     fh.write("\n" + "=" * 78 + f"\nЗапуск {time.strftime('%d.%m.%Y %H:%M:%S')}, fgislk_export.py v{VERSION}\n")
+    _LOG.update(fh=fh, stdout=sys.stdout, stderr=sys.stderr)
     sys.stdout = Tee(sys.stdout, fh); sys.stderr = Tee(sys.stderr, fh)
+
+
+def stop_log() -> None:
+    """Возвращает исходные потоки вывода (важно для Jupyter, где ядро продолжает работать)."""
+    if not _LOG:
+        return
+    try: sys.stdout.flush(); sys.stderr.flush()
+    except Exception: pass
+    sys.stdout, sys.stderr = _LOG["stdout"], _LOG["stderr"]
+    try: _LOG["fh"].close()
+    except Exception: pass
+    _LOG.clear()
+
+
+def in_ipython() -> bool:
+    """Запуск из Jupyter/IPython (%run): окно не закрывается, ядро завершать нельзя."""
+    import builtins
+    return bool(getattr(builtins, "__IPYTHON__", False))
 
 
 # ───────────────────────── экспорт ─────────────────────────
@@ -875,6 +936,15 @@ def export(args:argparse.Namespace,code:str,selected:list[dict[str,Any]],all_fla
     print(f"\nЗагрузка геометрии завершена за {fmt_time(time.time()-t0)}; "
           f"запросов к API {store.fetched}, взято из сохранённого {store.hits}")
     quarters=sort_features(quarters_all.values()); pieces=sort_features(pieces_all.values())
+    central_boundaries=sort_features(central_full)
+    forestry_bboxes,selected_area_bbox=make_forestry_bboxes(central_boundaries)
+    if forestry_bboxes:
+        print("BBOX выбранных лесничеств (west,south,east,north; EPSG:4326):")
+        for f in forestry_bboxes:
+            pr=f["properties"]
+            print(f"  {pr['forestry_id']}: {pr['bbox_wsen']}")
+        if len(forestry_bboxes)>1:
+            print(f"  общий: {selected_area_bbox[0]['properties']['bbox_wsen']}")
     attr_gaps=0
     if not args.no_attributes:
         attr_gaps=enrich_attributes(pieces,root/"attributes.jsonl",args.timeout,args.verify_ssl,args.workers)
@@ -885,7 +955,10 @@ def export(args:argparse.Namespace,code:str,selected:list[dict[str,Any]],all_fla
         pieces,links=spatial_protection_join(pieces,protection,args.min_overlap_m2)
         print(f"  записей пересечений: {len(links)}; выделов с ОЗУ: {sum(f['properties'].get('ozu_present')=='да' for f in pieces)}")
 
-    datasets=[("central_forestries",sort_features(central_full)),("district_forestries",sort_features(district_full)),
+    datasets=[("selected_forestry_boundaries",central_boundaries),
+              ("selected_forestry_bbox",forestry_bboxes),
+              ("selected_area_bbox",selected_area_bbox),
+              ("central_forestries",central_boundaries),("district_forestries",sort_features(district_full)),
               ("quarters",quarters),("taxation_pieces",pieces)]
     if not args.no_protection:
         for key,fs in protection.items(): datasets.append((key,fs))
@@ -899,6 +972,12 @@ def export(args:argparse.Namespace,code:str,selected:list[dict[str,Any]],all_fla
       "pieces_with_ozu":sum(f["properties"].get("ozu_present")=="да" for f in pieces),
       "min_overlap_m2":args.min_overlap_m2,"max_quarters":args.max_quarters,"max_pieces":args.max_pieces,
       "crs":"EPSG:4326 / OGC:CRS84","area_crs":"EPSG:6933",
+      "forestry_bbox_crs":"EPSG:4326",
+      "forestry_bboxes":{str(f["properties"]["forestry_id"]):[
+          f["properties"]["min_lon"],f["properties"]["min_lat"],
+          f["properties"]["max_lon"],f["properties"]["max_lat"]] for f in forestry_bboxes},
+      "selected_area_bbox":[selected_area_bbox[0]["properties"][k] for k in
+          ("min_lon","min_lat","max_lon","max_lat")] if selected_area_bbox else None,
       "created_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime())}
 
     print("\nЗапись GeoPackage...")
@@ -998,8 +1077,9 @@ def main(args:argparse.Namespace)->int:
 
 
 if __name__=="__main__":
-    args=parse_args()
-    pause=len(sys.argv)==1 or (not args.no_pause and not (args.region or args.list_regions or args.list_forestries))
+    args=parse_args(); notebook=in_ipython()
+    pause=not notebook and (len(sys.argv)==1 or
+          (not args.no_pause and not (args.region or args.list_regions or args.list_forestries)))
     rc=1
     try: rc=main(args)
     except KeyboardInterrupt:
@@ -1011,9 +1091,14 @@ if __name__=="__main__":
     if pause and not args.no_pause:
         try: input("\nНажмите Enter, чтобы закрыть окно...")
         except (EOFError, KeyboardInterrupt): pass
-    if _STOP.is_set():
+    stop_log()
+    if notebook:
+        # В Jupyter не завершаем ядро: фоновые потоки остановятся сами (_STOP установлен).
+        if rc: print(f"Код завершения: {rc}", file=sys.stderr)
+    elif _STOP.is_set():
         # Фоновые запросы атрибутов не ждём: всё полученное уже записано на диск.
         try: sys.stdout.flush(); sys.stderr.flush()
         except Exception: pass
         os._exit(rc)
-    raise SystemExit(rc)
+    else:
+        raise SystemExit(rc)
