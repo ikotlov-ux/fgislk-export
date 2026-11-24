@@ -1,0 +1,1199 @@
+{
+ "type": "CIMLayerDocument",
+ "version": "3.1.0",
+ "build": 41833,
+ "layers": [
+  "CIMPATH=map/taxation_pieces.json"
+ ],
+ "layerDefinitions": [
+  {
+   "type": "CIMFeatureLayer",
+   "name": "Выделы — преобладающая порода",
+   "uRI": "CIMPATH=map/taxation_pieces.json",
+   "sourceModifiedTime": {
+    "type": "TimeInstant"
+   },
+   "useSourceMetadata": true,
+   "description": "Выделы — преобладающая порода",
+   "layerType": "Operational",
+   "showLegends": true,
+   "visibility": true,
+   "displayCacheType": "Permanent",
+   "maxDisplayCacheAge": 5,
+   "showPopups": true,
+   "serviceLayerID": -1,
+   "refreshRate": -1,
+   "refreshRateUnit": "esriTimeUnitsSeconds",
+   "autoGenerateFeatureTemplates": true,
+   "featureTable": {
+    "type": "CIMFeatureTable",
+    "displayField": "tree_species",
+    "editable": true,
+    "dataConnection": {
+     "type": "CIMStandardDataConnection",
+     "workspaceConnectionString": "AUTHENTICATION_MODE=OSA;DATABASE=D:\\Yandex.Disk\\MOS_OBL\\FGISLK\\fgislk_50_all.gpkg",
+     "workspaceFactory": "Sql",
+     "dataset": "main.taxation_pieces",
+     "datasetType": "esriDTFeatureClass"
+    },
+    "studyAreaSpatialRel": "esriSpatialRelUndefined",
+    "searchOrder": "esriSearchOrderSpatial"
+   },
+   "htmlPopupEnabled": true,
+   "selectable": true,
+   "featureCacheType": "Session",
+   "renderer": {
+    "type": "CIMUniqueValueRenderer",
+    "colorRamp": null,
+    "defaultLabel": "Прочие / нет данных",
+    "defaultSymbol": {
+     "type": "CIMSymbolReference",
+     "symbol": {
+      "type": "CIMPolygonSymbol",
+      "symbolLayers": [
+       {
+        "type": "CIMSolidStroke",
+        "enable": true,
+        "capStyle": "Round",
+        "joinStyle": "Round",
+        "lineStyle3D": "Strip",
+        "miterLimit": 10,
+        "width": 0.2,
+        "color": {
+         "type": "CIMRGBColor",
+         "values": [
+          150,
+          150,
+          150,
+          100
+         ]
+        }
+       },
+       {
+        "type": "CIMSolidFill",
+        "enable": true,
+        "color": {
+         "type": "CIMRGBColor",
+         "values": [
+          255,
+          255,
+          255,
+          100
+         ]
+        }
+       }
+      ]
+     }
+    },
+    "defaultSymbolPatch": "Default",
+    "useDefaultSymbol": true,
+    "fields": [
+     "tree_species"
+    ],
+    "fieldDelimiter": ", ",
+    "groups": [
+     {
+      "type": "CIMUniqueValueGroup",
+      "heading": "tree_species",
+      "classes": [
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Сосна",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              104,
+              48,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ель",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              160,
+              16,
+              176,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Пихта",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              80,
+              208,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Кедр",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              32,
+              32,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Лиственница",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              152,
+              64,
+              64,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Дуб",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              104,
+              96,
+              96,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ясень",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              64,
+              104,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Клен",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              96,
+              120,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Вяз",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              88,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Береза",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              80,
+              184,
+              248,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Осина, тополь",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              80,
+              168,
+              120,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха серая",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              120,
+              200,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха черная",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              152,
+              96,
+              192,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Липа",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              248,
+              88,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ива",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              88,
+              168,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Рябина",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              232,
+              16,
+              8,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Яблоня",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              96,
+              56,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Каштан (нет в таблице ЛесИС)",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              160,
+              124,
+              84,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Порода не указана",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              235,
+              235,
+              235,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           ""
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "polygonSymbolColorTarget": "Fill"
+   },
+   "scaleSymbols": true,
+   "snappable": true
+  }
+ ]
+}

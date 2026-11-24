@@ -1,0 +1,6696 @@
+{
+ "type": "CIMLayerDocument",
+ "version": "3.1.0",
+ "build": 41833,
+ "layers": [
+  "CIMPATH=map/taxation_pieces.json"
+ ],
+ "layerDefinitions": [
+  {
+   "type": "CIMFeatureLayer",
+   "name": "Выделы — порода и группа возраста",
+   "uRI": "CIMPATH=map/taxation_pieces.json",
+   "sourceModifiedTime": {
+    "type": "TimeInstant"
+   },
+   "useSourceMetadata": true,
+   "description": "Выделы — порода и группа возраста",
+   "layerType": "Operational",
+   "showLegends": true,
+   "visibility": true,
+   "displayCacheType": "Permanent",
+   "maxDisplayCacheAge": 5,
+   "showPopups": true,
+   "serviceLayerID": -1,
+   "refreshRate": -1,
+   "refreshRateUnit": "esriTimeUnitsSeconds",
+   "autoGenerateFeatureTemplates": true,
+   "featureTable": {
+    "type": "CIMFeatureTable",
+    "displayField": "tree_species",
+    "editable": true,
+    "dataConnection": {
+     "type": "CIMStandardDataConnection",
+     "workspaceConnectionString": "AUTHENTICATION_MODE=OSA;DATABASE=D:\\Yandex.Disk\\MOS_OBL\\FGISLK\\fgislk_50_all.gpkg",
+     "workspaceFactory": "Sql",
+     "dataset": "main.taxation_pieces",
+     "datasetType": "esriDTFeatureClass"
+    },
+    "studyAreaSpatialRel": "esriSpatialRelUndefined",
+    "searchOrder": "esriSearchOrderSpatial"
+   },
+   "htmlPopupEnabled": true,
+   "selectable": true,
+   "featureCacheType": "Session",
+   "renderer": {
+    "type": "CIMUniqueValueRenderer",
+    "colorRamp": null,
+    "defaultLabel": "Прочие / нет данных",
+    "defaultSymbol": {
+     "type": "CIMSymbolReference",
+     "symbol": {
+      "type": "CIMPolygonSymbol",
+      "symbolLayers": [
+       {
+        "type": "CIMSolidStroke",
+        "enable": true,
+        "capStyle": "Round",
+        "joinStyle": "Round",
+        "lineStyle3D": "Strip",
+        "miterLimit": 10,
+        "width": 0.2,
+        "color": {
+         "type": "CIMRGBColor",
+         "values": [
+          150,
+          150,
+          150,
+          100
+         ]
+        }
+       },
+       {
+        "type": "CIMSolidFill",
+        "enable": true,
+        "color": {
+         "type": "CIMRGBColor",
+         "values": [
+          255,
+          255,
+          255,
+          100
+         ]
+        }
+       }
+      ]
+     }
+    },
+    "defaultSymbolPatch": "Default",
+    "useDefaultSymbol": true,
+    "fields": [
+     "tree_species",
+     "age_group"
+    ],
+    "fieldDelimiter": ", ",
+    "groups": [
+     {
+      "type": "CIMUniqueValueGroup",
+      "heading": "tree_species, age_group",
+      "classes": [
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Сосна — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              176,
+              152,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Сосна — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              144,
+              96,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Сосна — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              104,
+              48,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Сосна — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              64,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Сосна — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              144,
+              96,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Сосна",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ель — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              232,
+              160,
+              224,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ель — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              208,
+              96,
+              200,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ель — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              160,
+              16,
+              176,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ель — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              16,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ель — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              208,
+              96,
+              200,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ель колючая (голубая)",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Пихта — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              216,
+              208,
+              240,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Пихта — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              168,
+              232,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Пихта — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              80,
+              208,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Пихта — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              64,
+              32,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Пихта — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              168,
+              232,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Пихта сибирская",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Кедр — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              240,
+              136,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Кедр — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              88,
+              88,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Кедр — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              32,
+              32,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Кедр — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              224,
+              0,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Кедр — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              88,
+              88,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Кедр",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Лиственница — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              216,
+              168,
+              168,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Лиственница — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              176,
+              104,
+              104,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Лиственница — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              152,
+              64,
+              64,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Лиственница — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              0,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Лиственница — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              176,
+              104,
+              104,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница сибирская",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Лиственница европейская",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Дуб — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              176,
+              168,
+              168,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Дуб — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              128,
+              128,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Дуб — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              104,
+              96,
+              96,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Дуб — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              72,
+              72,
+              72,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Дуб — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              128,
+              128,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб низкоствольный",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Дуб красный",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ясень — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              168,
+              192,
+              216,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ясень — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              160,
+              192,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ясень — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              64,
+              104,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ясень — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              0,
+              0,
+              128,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ясень — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              160,
+              192,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ясень",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Клен — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              232,
+              200,
+              200,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Клен — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              208,
+              144,
+              160,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Клен — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              96,
+              120,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Клен — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              32,
+              40,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Клен — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              208,
+              144,
+              160,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен остролистный",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Клен ясенелистный",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Вяз — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              176,
+              104,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Вяз — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              224,
+              112,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Вяз — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              88,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Вяз — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              64,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Вяз — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              224,
+              112,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм)",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Вяз (ильм) шершавый (ильм горный)",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Береза — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              176,
+              216,
+              248,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Береза — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              200,
+              248,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Береза — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              80,
+              184,
+              248,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Береза — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              24,
+              144,
+              248,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Береза — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              128,
+              200,
+              248,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Береза камчатская",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Осина, тополь — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              216,
+              200,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Осина, тополь — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              136,
+              200,
+              160,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Осина, тополь — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              80,
+              168,
+              120,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Осина, тополь — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              0,
+              136,
+              80,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Осина, тополь — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              136,
+              200,
+              160,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Осина",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Тополь",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха серая — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              208,
+              248,
+              160,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха серая — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              168,
+              240,
+              72,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха серая — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              120,
+              200,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха серая — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              80,
+              136,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха серая — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              168,
+              240,
+              72,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха серая (белая)",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха черная — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              232,
+              216,
+              240,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха черная — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              200,
+              176,
+              216,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха черная — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              152,
+              96,
+              192,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха черная — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              112,
+              32,
+              168,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ольха черная — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              200,
+              176,
+              216,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ольха черная (клейкая)",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Липа — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              248,
+              208,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Липа — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              240,
+              232,
+              144,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Липа — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              248,
+              88,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Липа — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              248,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Липа — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              240,
+              232,
+              144,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Липа",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ива — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              208,
+              232,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ива — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              160,
+              208,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ива — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              88,
+              168,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ива — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              48,
+              152,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Ива — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              160,
+              208,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива древовидная",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива белая (дерево)",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Ива козья",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Рябина — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              152,
+              144,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Рябина — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              96,
+              88,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Рябина — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              232,
+              16,
+              8,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Рябина — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              184,
+              16,
+              0,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Рябина — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              96,
+              88,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Рябина",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Яблоня — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              208,
+              200,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Яблоня — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              152,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Яблоня — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              96,
+              56,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Яблоня — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              240,
+              48,
+              8,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Яблоня — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              248,
+              152,
+              136,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Яблоня",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Каштан (нет в таблице ЛесИС) — молодняки",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              222,
+              200,
+              170,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "молодняки II класса возраста"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Каштан (нет в таблице ЛесИС) — средневозрастные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              196,
+              164,
+              124,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "средневозрастные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Каштан (нет в таблице ЛесИС) — приспевающие",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              160,
+              124,
+              84,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "Средневозрастные и приспевающие"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Каштан (нет в таблице ЛесИС) — спелые и перестойные",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              120,
+              88,
+              56,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "перестойные"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Каштан (нет в таблице ЛесИС) — возраст не указан",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              196,
+              164,
+              124,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "Каштан",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       },
+       {
+        "type": "CIMUniqueValueClass",
+        "label": "Порода не указана",
+        "patch": "Default",
+        "symbol": {
+         "type": "CIMSymbolReference",
+         "symbol": {
+          "type": "CIMPolygonSymbol",
+          "symbolLayers": [
+           {
+            "type": "CIMSolidStroke",
+            "enable": true,
+            "capStyle": "Round",
+            "joinStyle": "Round",
+            "lineStyle3D": "Strip",
+            "miterLimit": 10,
+            "width": 0.2,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              110,
+              110,
+              110,
+              100
+             ]
+            }
+           },
+           {
+            "type": "CIMSolidFill",
+            "enable": true,
+            "color": {
+             "type": "CIMRGBColor",
+             "values": [
+              235,
+              235,
+              235,
+              100
+             ]
+            }
+           }
+          ]
+         }
+        },
+        "visible": true,
+        "values": [
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "<Null>",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "<Null>"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           ""
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "молодняки I класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "молодняки II класса возраста"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "средневозрастные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "Средневозрастные и приспевающие"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "спелые"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "перестойные"
+          ]
+         },
+         {
+          "type": "CIMUniqueValue",
+          "fieldValues": [
+           "",
+           "Не установлена (деревья с диаметром 6 см и более отсутствуют)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "polygonSymbolColorTarget": "Fill"
+   },
+   "scaleSymbols": true,
+   "snappable": true
+  }
+ ]
+}
