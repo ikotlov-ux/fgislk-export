@@ -15,6 +15,9 @@
 загрузка прервана, повторный запуск с той же папкой продолжает с последней
 сохранённой страницы.
 Результат: <папка>/fgislk_<регион>_<выбор>.gpkg и журнал *_log.txt.
+Промежуточные данные после записи GPKG сохраняются (удаление — флаг --clean-cache);
+повторный запуск с той же папкой пересобирает GPKG из них без новых запросов.
+Все площадные слои пишутся как MultiPolygon (совместимо с ArcGIS Pro).
 GeoJSON и CSV по слоям — только по флагам --geojson / --csv.
 
 Установка:
@@ -26,6 +29,7 @@ GeoJSON и CSV по слоям — только по флагам --geojson / --
     python fgislk_export.py --list-forestries 26
     python fgislk_export.py --region 26 --forestry 26:4 --out D:\\FGISLK\\essentuki
     python fgislk_export.py --out D:\\FGISLK\\essentuki      (продолжить незавершённую)
+    python fgislk_export.py --repair D:\\FGISLK\\fgislk_50_all.gpkg   (исправить готовый GPKG для ArcGIS Pro)
     %run fgislk_export.py                                   (Jupyter)
 """
 from __future__ import annotations
@@ -50,7 +54,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-VERSION = "2.0"
+VERSION = "2.1"
 MAP_API = "https://pub.fgislk.gov.ru/map/geo/map_api"
 GEO_API = MAP_API + "/geo"
 ATTR_API = MAP_API + "/layer/attributesinfo"
@@ -766,7 +770,96 @@ def features_to_gdf(fs: list[dict[str,Any]]):
     for c in gdf.columns:
         if c != "geometry" and gdf[c].dtype == object:
             gdf[c] = gdf[c].map(_cell)
+    return prepare_gdf(gdf)
+
+
+NUMERIC_FIELDS = ("square", "totalArea", "timber_stock")
+
+
+def to_multipolygon(g: Any) -> Any:
+    """Площадная геометрия в виде MultiPolygon: исправление невалидной, извлечение полигонов
+    из GeometryCollection; непригодная геометрия — None."""
+    from shapely.geometry import MultiPolygon
+    if g is None or g.is_empty: return None
+    if not g.is_valid:
+        try:
+            from shapely import make_valid; g = make_valid(g)
+        except Exception: g = g.buffer(0)
+    if g.geom_type == "GeometryCollection":
+        parts = []
+        for p in g.geoms:
+            if p.geom_type == "Polygon": parts.append(p)
+            elif p.geom_type == "MultiPolygon": parts.extend(p.geoms)
+        g = MultiPolygon(parts) if parts else None
+    if g is None or g.is_empty: return None
+    if g.geom_type == "Polygon": return MultiPolygon([g])
+    if g.geom_type == "MultiPolygon": return g
+    return None
+
+
+def prepare_gdf(gdf: Any) -> Any:
+    """Приведение слоя к виду, который одинаково читают QGIS и ArcGIS Pro:
+    один тип геометрии (MultiPolygon) на слой и числовые поля площади/запаса."""
+    import pandas as pd
+    if "geometry" in gdf.columns and gdf.geometry.notna().any():
+        types = gdf.geometry.dropna().geom_type
+        if types.isin(["Polygon", "MultiPolygon", "GeometryCollection"]).all():
+            bad = int((~types.isin(["Polygon", "MultiPolygon"])).sum() + (~gdf.geometry.dropna().is_valid).sum())
+            gdf = gdf.set_geometry(gdf.geometry.map(to_multipolygon), crs=gdf.crs)
+            if bad: print(f"    исправлено геометрий: {bad}")
+    for c in NUMERIC_FIELDS:
+        if c in gdf.columns and not pd.api.types.is_numeric_dtype(gdf[c]):
+            vals = gdf[c].astype(object).where(gdf[c].notna(), None)
+            num = pd.to_numeric(vals.map(lambda v: v.replace(",", ".") if isinstance(v, str) else v),
+                                errors="coerce")
+            if int(num.notna().sum()) == int(vals.map(lambda v: v not in (None, "")).sum()):
+                gdf[c] = num
     return gdf
+
+
+def write_layer(path: Path, name: str, gdf: Any, first: bool) -> None:
+    import pyogrio
+    polygonal_layer = ("geometry" in gdf.columns and gdf.geometry.notna().any()
+                       and gdf.geometry.dropna().geom_type.eq("MultiPolygon").all())
+    kw = {"geometry_type": "MultiPolygon"} if polygonal_layer else {"promote_to_multi": True}
+    pyogrio.write_dataframe(gdf, path, layer=name, driver="GPKG", append=not first, **kw)
+
+
+def finalize_gpkg(path: Path) -> None:
+    """Обычный журнал SQLite вместо WAL: без файлов -wal/-shm рядом с GPKG
+    (важно для ArcGIS Pro и синхронизации облачных дисков)."""
+    import sqlite3
+    con = sqlite3.connect(str(path))
+    try:
+        con.execute("PRAGMA journal_mode=DELETE"); con.commit()
+    finally:
+        con.close()
+
+
+def repair_gpkg(path: Path) -> Path:
+    """Исправляет уже созданный GPKG без повторной загрузки: типы геометрии, числовые поля, журнал."""
+    import pyogrio
+    path = Path(path)
+    if not path.exists(): raise RuntimeError(f"Файл не найден: {path}")
+    tmp = path.with_name(path.stem + ".repair.partial.gpkg")
+    if tmp.exists(): tmp.unlink()
+    layers = pyogrio.list_layers(path)
+    print(f"Исправление {path.name}: слоёв {len(layers)}")
+    first = True
+    for name, gtype in layers:
+        t = time.time()
+        df = pyogrio.read_dataframe(path, layer=name, fid_as_index=False)
+        if gtype is None or "geometry" not in getattr(df, "columns", []):
+            pyogrio.write_dataframe(df, tmp, layer=name, driver="GPKG", append=not first)
+        else:
+            if "fid" in df.columns: df = df.drop(columns="fid")
+            write_layer(tmp, name, prepare_gdf(df), first)
+        first = False
+        print(f"  {name}: {len(df)} записей, {gtype or 'таблица'} ({fmt_time(time.time()-t)})")
+    finalize_gpkg(tmp)
+    os.replace(tmp, path)
+    print(f"Готово: {path.resolve()}")
+    return path
 
 
 def save_gpkg(path:Path,datasets:list[tuple[str,list[dict[str,Any]]]],metadata:dict[str,Any])->Path|None:
@@ -779,8 +872,7 @@ def save_gpkg(path:Path,datasets:list[tuple[str,list[dict[str,Any]]]],metadata:d
         if not fs:
             print(f"  {name}: пустой слой, в GPKG не записан"); continue
         gdf = features_to_gdf(fs)
-        gdf.to_file(tmp, layer=name, driver="GPKG", mode="w" if not written else "a",
-                    engine="pyogrio", promote_to_multi=True)
+        write_layer(tmp, name, gdf, not written)
         written += 1
         print(f"  {name}: {len(gdf)} объектов, {len(gdf.columns)-1} полей")
     if not written:
@@ -791,6 +883,8 @@ def save_gpkg(path:Path,datasets:list[tuple[str,list[dict[str,Any]]]],metadata:d
         pyogrio.write_dataframe(meta, tmp, layer="metadata", driver="GPKG", append=True)
     except Exception as exc:
         print(f"  таблица metadata не записана: {short(exc)}")
+    try: finalize_gpkg(tmp)
+    except Exception as exc: print(f"  журнал SQLite не переключён: {short(exc)}")
     try:
         os.replace(tmp, path); return path
     except OSError:
@@ -854,7 +948,7 @@ def in_ipython() -> bool:
 # ───────────────────────── экспорт ─────────────────────────
 
 OPTION_KEYS = ("page_size","timeout","workers","verify_ssl","no_attributes","no_protection",
-               "min_overlap_m2","max_quarters","max_pieces","geojson","csv","keep_cache")
+               "min_overlap_m2","max_quarters","max_pieces","geojson","csv")
 
 
 def export(args:argparse.Namespace,code:str,selected:list[dict[str,Any]],all_flag:bool,
@@ -996,8 +1090,11 @@ def export(args:argparse.Namespace,code:str,selected:list[dict[str,Any]],all_fla
     atomic_write_text(root/"run.json",json.dumps(run,ensure_ascii=False,indent=2))
     if gpkg is None:
         print("GPKG не создан: нет данных."); return None
-    if run["status"]=="done" and not test_run and not args.keep_cache:
-        shutil.rmtree(root,ignore_errors=True); print("Промежуточные данные удалены.")
+    if run["status"]=="done" and not test_run and args.clean_cache:
+        shutil.rmtree(root,ignore_errors=True); print("Промежуточные данные удалены (--clean-cache).")
+    elif run["status"]=="done":
+        print(f"Промежуточные данные сохранены в {root.name}: повторный запуск с той же папкой "
+              f"пересоберёт GPKG без загрузки. Удалить их: --clean-cache.")
     elif attr_gaps:
         print(f"Промежуточные данные сохранены в {root.name}: запустите скрипт с той же папкой, "
               f"чтобы дозапросить атрибуты.")
@@ -1018,7 +1115,9 @@ def parse_args()->argparse.Namespace:
     p.add_argument("--max-quarters",type=int,default=0); p.add_argument("--max-pieces",type=int,default=0)
     p.add_argument("--geojson",action="store_true",help="Дополнительно GeoJSON по слоям")
     p.add_argument("--csv",action="store_true",help="Дополнительно CSV по слоям")
-    p.add_argument("--keep-cache",action="store_true",help="Не удалять промежуточные данные после GPKG")
+    p.add_argument("--clean-cache",action="store_true",help="Удалить промежуточные данные после успешной записи GPKG")
+    p.add_argument("--keep-cache",action="store_true",help=argparse.SUPPRESS)   # совместимость: теперь по умолчанию
+    p.add_argument("--repair",metavar="GPKG",help="Исправить готовый GPKG для ArcGIS Pro без повторной загрузки")
     p.add_argument("--restart",action="store_true",help="Начать загрузку заново, удалив сохранённое")
     p.add_argument("--no-pause",action="store_true",help="Не ждать Enter перед закрытием окна")
     a=p.parse_args(); a.workers=max(1,min(8,a.workers)); return a
@@ -1034,7 +1133,17 @@ def check_dependencies()->None:
                            ". Установка: python -m pip install requests geopandas pyogrio shapely")
 
 
+def drop_test(central:list[dict[str,Any]])->list[dict[str,Any]]:
+    """При выборе всех лесничеств служебные «Тестовое лесничество» исключаются (у 50:105 граница на Урале)."""
+    keep=[f for f in central if "тестов" not in label(f).lower()]
+    for f in central:
+        if f not in keep: print(f"  пропущено служебное: {ext(f)} {label(f)}")
+    return keep or central
+
+
 def main(args:argparse.Namespace)->int:
+    if args.repair:
+        check_dependencies(); repair_gpkg(Path(args.repair).expanduser()); return 0
     session=make_session(args.verify_ssl)
     if args.list_regions: print_regions(); return 0
     if args.list_forestries:
@@ -1066,12 +1175,13 @@ def main(args:argparse.Namespace)->int:
         wanted={x.strip() for x in args.forestry.split(",")}; selected=[f for f in central if ext(f) in wanted]
         missing=wanted-{ext(f) for f in selected}
         if missing: raise RuntimeError("Не найдены: "+", ".join(sorted(missing)))
-    elif args.all_forestries: selected=central; all_flag=True
+    elif args.all_forestries: selected=drop_test(central); all_flag=True
     else:
         print(f"\n{code} — {REGIONS.get(code,code)}")
         for i,f in enumerate(central,1): print(f"{i:3}. {ext(f):12} {label(f)}")
         idx=choose("Выберите лесничество",len(central),True)
         selected=[central[i] for i in idx]; all_flag=len(idx)==len(central)
+        if all_flag: selected=drop_test(selected)
     if out is None: out=Path(f"fgislk_{code}")
     return 0 if export(args,code,selected,all_flag,out,session) else 1
 
